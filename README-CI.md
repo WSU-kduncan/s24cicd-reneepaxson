@@ -17,8 +17,9 @@ EXPOSE [port] (binds to particular port)
 3. `docker build -t image_name .`
 
 # how to run container
-1. `docker pull rensite:rensite`
-2. `docker run --name rensite -p 80:80 -d rensite`
+1. `docker build -t rensite .` from within the folder
+2. `docker pull paxson13/rensite:latest`
+3. `docker run --name rensite -p 80:80 -d rensite`
 
 # how to view project
 1. if you're on mac: `ifconfig` then look for inet address. others, i dunno, probably ip a or ipconfig or something and still look for inet
