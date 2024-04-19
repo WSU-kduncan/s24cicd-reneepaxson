@@ -26,6 +26,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./website
-          file: ./Dockerfile
+          file: ./website/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/rensite:latest
