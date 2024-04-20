@@ -2,9 +2,9 @@
 ## Project Overview
 
 # Part 1: Semantic Versioning
-## How to generate a tag in git / github
+## How to generate a tag in git / GitHub
 
-## Behavior of github workflow
+## Behavior of GitHub workflow
 #### run when a tag is pushed
 runs on push to main with a tag like v1.0.0
 ``` 
