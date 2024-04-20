@@ -78,17 +78,23 @@ Webhook is a http server that creates endpoints that can be used to execute comm
 #### Starting webhook
 `sudo webhook -hooks hooks.json -verbose`
 #### [Webhook Service file ](deployment/webhook.service)
-ExecStart starts a service on boot
+Had to go into `/lib/systemd/system` and modify the `webhook.service` file to follow the path to the script in home/ubuntu, then the file location in `execstart` under `Service`, and then I changed the file description for fun.
+Most of the contents of this file were part of the original `webhook.service` file
 ``` 
 [Unit]
 Description=web hookin
+Documentation=https://github.com/adnanh/webhook/
+ConditionPathExists=/home/ubuntu
 
 [Service]
-ExecStart=/usr/bin/webhook -hooks /home/ubuntu/hooks.json
+ExecStart=/usr/bin/webhook -nopanic -hooks /home/ubuntu/hooks.json
 
 [Install]
 WantedBy=multi-user.target
 ```
+
 sources: 
 [How to create a systemd service in Linux ](https://linuxhandbook.com/create-systemd-services/)
 [CI/CD with Webhook](https://hub.analythium.io/docs/shinyproxy-webhook/)
+
+#### Proof that the CICD flow works
