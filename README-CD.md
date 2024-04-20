@@ -32,13 +32,18 @@ jobs:
             paxson13/rensite
           tags: |
             latest
-            type=semver,pattern={{raw}}
+            type=semver,pattern=v{{major}}
+            type=semver,pattern=v{{major}}.{{minor}}
 ```
-`pattern={{raw}}` copies the exact git tag into docker
+`pattern={{major}}` and `pattern=v{{major}}.{{minor}}` copies the git tag into docker
+
+Order of operations with tagging:
 1. git add -A
 2. git commit -m "message"
 3. git tag v*.\*.*
 4. git push
-5. git push tag?
+5. git push origin --tags: tags the last commit
+
+#### 
 
 ## [Rensite Docker Hub repo](https://hub.docker.com/repository/docker/paxson13/rensite/general)
