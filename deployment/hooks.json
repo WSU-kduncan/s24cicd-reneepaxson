@@ -1,0 +1,7 @@
+[
+  {
+    "id": "redeploy-webhook",
+    "execute-command": "/home/ubuntu/s24cicd-reneepaxson/deployment/script.sh",
+    "command-working-directory": "/home/ubuntu/s24cicd-reneepaxson"
+  }
+]
