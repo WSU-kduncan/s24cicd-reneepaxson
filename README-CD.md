@@ -43,6 +43,6 @@ Order of operations with tagging:
 4. git push
 5. git push origin --tags: tags the last commit
 
-#### 
-
 ## [Rensite Docker Hub repo](https://hub.docker.com/repository/docker/paxson13/rensite/general)
+
+# Part 2: Deployment

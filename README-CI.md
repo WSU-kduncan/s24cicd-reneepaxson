@@ -54,6 +54,7 @@ https://hub.docker.com/repository/docker/paxson13/rensite/general
 
 # [Github workflow](https://docs.docker.com/build/ci/github-actions/)
 1. follow guide 
+this changed in p5 but [heres a link](./.github/workflows/ci.yml)
 ```
 name: ci
 
