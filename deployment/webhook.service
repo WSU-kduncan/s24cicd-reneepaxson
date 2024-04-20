@@ -1,0 +1,8 @@
+[Unit]
+Description=web hookin
+
+[Service]
+ExecStart=/usr/bin/webhook -hooks /home/ubuntu/hooks.json
+
+[Install]
+WantedBy=multi-user.target
