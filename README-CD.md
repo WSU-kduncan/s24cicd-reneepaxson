@@ -1,6 +1,6 @@
 # Project 5: CD
 ## Project Overview
-
+This project covers connecting GitHub to Docker using GitHub actions, git tagging, and webhooks.
 # Part 1: Semantic Versioning
 ## How to generate a tag in git / GitHub
 
