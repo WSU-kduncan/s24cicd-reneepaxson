@@ -42,8 +42,3 @@ jobs:
           file: ./website/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-  webhook:
-    runs-on: ubuntu-latest
-    steps:
-      - name: http request
-        run: curl http://54.226.9.45:9000/hooks/redeploy-webhook
