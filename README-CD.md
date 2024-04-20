@@ -97,7 +97,15 @@ sources:
 [How to create a systemd service in Linux ](https://linuxhandbook.com/create-systemd-services/)
 [CI/CD with Webhook](https://hub.analythium.io/docs/shinyproxy-webhook/)
 
-#### Proof that the CICD flow works
+#### Dockerhub as the listener
+1. go to dockerhub repo
+2. go to webhooks
+3. press plus and create new hook
+my hook credentials:
+* name: redeploy-webhook
+* URL: http://54.226.9.45:9000/hooks/redeploy-webhook
 
 # Part 3 - Diagramming
 ![diagram](diagram.png)
+
+### [DockerFile is in the website folder](website/Dockerfile)
