@@ -46,3 +46,19 @@ Order of operations with tagging:
 ## [Rensite Docker Hub repo](https://hub.docker.com/repository/docker/paxson13/rensite/general)
 
 # Part 2: Deployment
+#### installing docker
+1. `sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc`
+2. `sudo chmod a+r /etc/apt/keyrings/docker.asc`
+3. `echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+4. `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+
+####
+``` 
+[
+  {
+    "id": "redeploy-webhook",
+    "execute-command": "script.sh",
+    "command-working-directory": "~/"
+  }
+]
+```
