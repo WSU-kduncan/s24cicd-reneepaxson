@@ -1,8 +1,10 @@
 [Unit]
 Description=web hookin
+Documentation=https://github.com/adnanh/webhook/
+ConditionPathExists=/home/ubuntu
 
 [Service]
-ExecStart=/usr/bin/webhook -hooks /home/ubuntu/hooks.json
+ExecStart=/usr/bin/webhook -nopanic -hooks /home/ubuntu/hooks.json
 
 [Install]
 WantedBy=multi-user.target
