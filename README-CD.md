@@ -52,12 +52,32 @@ Order of operations with tagging:
 3. `echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
 4. `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
-#### [Restart script](./deployment/script.sh)
+#### [link to Restart script](./deployment/script.sh)
+This script kills the previous container and pulls the most recent image then reruns it. The script should be in home because a different user may not have all of my folders
 ``` 
 #! /bin/bash
-
+docker stop rensite
+docker rm rensite
 docker pull paxson13/rensite:latest
-docker restart rensite
+docker run --name rensite -p 80:80 -d paxson13/rensite
 ```
-This script pulls the latest image and restarts the container
 
+#### Setting up webhook 
+Webhook is a http server that creates endpoints that can be used to execute commands on the server it's running on. The [hooks.json](deployment/hooks.json) file should be in home because a different user may not have all of my folders.
+
+``` 
+[
+  {
+    "id": "redeploy-webhook",
+    "execute-command": "script.sh",
+    "command-working-directory": "/home/ubuntu"
+  }
+]
+```
+
+#### Starting webhook
+`sudo webhook -hooks hooks.json -verbose`
+#### [Service file ]()
+sources: 
+[How to create a systemd service in Linux ](https://linuxhandbook.com/create-systemd-services/)
+[CI/CD with Webhook](https://hub.analythium.io/docs/shinyproxy-webhook/)
