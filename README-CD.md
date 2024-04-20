@@ -38,6 +38,7 @@ jobs:
 1. git add -A
 2. git commit -m "message"
 3. git tag v*.\*.*
-4. git p
+4. git push
+5. git push tag?
 
 ## [Rensite Docker Hub repo](https://hub.docker.com/repository/docker/paxson13/rensite/general)
