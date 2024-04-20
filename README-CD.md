@@ -57,7 +57,7 @@ Order of operations with tagging:
 [
   {
     "id": "redeploy-webhook",
-    "execute-command": "~/script.sh",
+    "execute-command": "script.sh",
     "command-working-directory": "~/"
   }
 ]
