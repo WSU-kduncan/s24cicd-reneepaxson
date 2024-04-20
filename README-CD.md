@@ -5,7 +5,6 @@
 ## How to generate a tag in git / github
 
 ## Behavior of github workflow
-(what does it do and when)
 #### run when a tag is pushed
 runs on push to main with a tag like v1.0.0
 ``` 
