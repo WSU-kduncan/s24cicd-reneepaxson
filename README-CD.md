@@ -98,3 +98,6 @@ sources:
 [CI/CD with Webhook](https://hub.analythium.io/docs/shinyproxy-webhook/)
 
 #### Proof that the CICD flow works
+
+# Part 3 - Diagramming
+![diagram](diagram.png)
