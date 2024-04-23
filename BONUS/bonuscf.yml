@@ -176,6 +176,14 @@ Resources:
           #!/bin/bash -xe
           sudo apt-get update -y
           sudo apt-get install -y haproxy git 
+          sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+          sudo chmod a+r /etc/apt/keyrings/docker.asc
+          sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+          sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+          sudo docker stop rensite
+          sudo docker rm rensite
+          sudo docker pull paxson13/rensite:latest
+          sudo docker run --name rensite -p 80:80 -d paxson13/rensite
           sudo echo "this worked!!!" > /home/ubuntu/success.txt
           sudo reboot
   WebServ1Instance:
