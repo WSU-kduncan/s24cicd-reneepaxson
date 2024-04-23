@@ -175,11 +175,6 @@ Resources:
         Fn::Base64: # docker command is to update docker
           !Sub |
             #!/bin/bash -xe
-            apt-get update && \
-            apt-get install -y \ 
-              haproxy \
-              git && \
-            hostnamectl set-hostname proxy && \
             echo "this worked!!!" > /home/ubuntu/success.txt && \
             reboot
   WebServ1Instance:
