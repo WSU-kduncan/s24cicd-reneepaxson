@@ -173,6 +173,7 @@ Resources:
           PrivateIpAddress: 172.18.0.25
       UserData:
         Fn::Base64: !Sub |
+          
           #!/bin/bash -xe
           sudo apt-get update -y
           sudo apt-get install -y haproxy git 
