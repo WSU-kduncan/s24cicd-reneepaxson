@@ -172,15 +172,12 @@ Resources:
           SubnetId: !Ref PublicSubnet
           PrivateIpAddress: 172.18.0.25
       UserData:
-        Fn::Base64: # docker command is to update docker
-          !Sub |
-            #!/bin/bash -xe
-            apt-get update && \
-            apt-get install -y \ 
-              haproxy \
-              git && \
-            echo "this worked!!!" > /home/ubuntu/success.txt && \
-            reboot
+        Fn::Base64: !Sub |
+          #!/bin/bash -xe
+          sudo apt-get update -y
+          sudo apt-get install -y haproxy git 
+          sudo echo "this worked!!!" > /home/ubuntu/success.txt
+          sudo reboot
   WebServ1Instance:
     Type: 'AWS::EC2::Instance'
     DependsOn: NATGateway
