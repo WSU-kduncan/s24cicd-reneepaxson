@@ -179,7 +179,6 @@ Resources:
             apt-get install -y \ 
               haproxy \
               git && \
-            hostnamectl set-hostname proxy && \
             echo "this worked!!!" > /home/ubuntu/success.txt && \
             reboot
   WebServ1Instance:
