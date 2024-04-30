@@ -107,6 +107,6 @@ my hook credentials:
 #### [CICD Flow Proof](https://youtu.be/gfZ2Ay6PBeI)
 
 # Part 3 - Diagramming
-![diagram](diagram.png)
+![diagram](cd-diagram.png)
 
 ### [DockerFile is in the website folder](website/Dockerfile)
